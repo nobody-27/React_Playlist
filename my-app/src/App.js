@@ -12,7 +12,7 @@ function App() {
  
     <Navbar title="Nobody" about_test="About...." />
     <div className='container my-3'>
-        <Textform heading="enter the text" /> 
+        <Textform heading="Enter the text" /> 
     </div>
     
     </>
