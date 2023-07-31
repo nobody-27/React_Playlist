@@ -8,6 +8,7 @@ import { useState } from 'react';
 
 
 function App() {
+  
   const [mode, setMode] = useState('light'); //whether dark mode is enabled.
 
   const [alert, setalert] = useState(null); 
@@ -17,20 +18,18 @@ function App() {
       msg:message,
       type: type
     }))
-
   }
-
-
-
 
   const toggleMode = () => {
     if(mode === 'light'){
       setMode('dark')
       document.body.style.backgroundColor = 'grey'
+      showalert("Dark mode has been enabled","success");
     }
     else{
         setMode('light')
-        document.body.style.backgroundColor = 'white'
+        document.body.style.backgroundColor = 'white';
+        showalert("Light mode has been enabled","success");
     }
   }
 
@@ -38,17 +37,10 @@ function App() {
   <>
     <Navbar title="Nobody" about_test="About...." mode={mode} toggleMode={toggleMode} />
     
-    <Alert  alertmessage={alert} ></Alert>
-
-
-
+    <Alert  alert={alert} ></Alert>
     <div className='container my-3'>
         <Textform heading="Enter the text"  mode={mode}/> 
     </div>
-
-
-    
-    
     </>
   );
 }
